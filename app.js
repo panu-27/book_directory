@@ -16,11 +16,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/books', bookRoutes);
-app.get('/', (req, res) => res.redirect('/books'));
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async() => {
     await connectToDB();
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+app.use('/books', bookRoutes);
+app.get('/', (req, res) => res.redirect('/books'));
+
