@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add a Book</title>
+</head>
+<body>
+  <h1>Add a Book</h1>
+
+  <form action="/books/new-book" method="POST" enctype="multipart/form-data">
+    <div>
+      <label>Book Name:</label>
+      <input type="text" name="name" required />
+    </div>
+
+    <div>
+      <label>Author:</label>
+      <input type="text" name="author" required />
+    </div>
+
+    <div>
+      <label>Pages:</label>
+      <input type="number" name="pages" required />
+    </div>
+
+    <div>
+      <label>Price:</label>
+      <input type="number" name="price" required />
+    </div>
+
+    <div>
+      <input type="file" name="image" accept="image/*" required />
+    </div>
+
+    <div>
+      <button type="submit">Add Book</button>
+    </div>
+  </form>
+</body>
+</html>

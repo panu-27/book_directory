@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Book</title>
+</head>
+<body>
+  <h1>Edit Book</h1>
+  <form action="/books/<%= book._id %>/update" method="POST" enctype="multipart/form-data">
+    <label>Book Name:</label>
+    <input type="text" name="name" value="<%= book.name %>" required />
+
+    <label>Author:</label>
+    <input type="text" name="author" value="<%= book.author %>" required />
+
+    <label>Pages:</label>
+    <input type="number" name="pages" value="<%= book.pages %>" required />
+
+    <label>Price:</label>
+    <input type="number" name="price" value="<%= book.price %>" required />
+
+    <label>Image:</label>
+    <input type="file" name="image" accept="image/*" />
+
+    <img src="<%= book.imageUrl %>" alt="Current Image" width="200" />
+
+    <button type="submit">Update Book</button>
+  </form>
+</body>
+</html>
