@@ -4,38 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Add a Book</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Add a Book</h1>
+<body class="bg-gray-100 py-10">
+  <div class="max-w-xl mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6">Add a Book</h1>
+    <form action="/books/new-book" method="POST" enctype="multipart/form-data" class="space-y-4">
+      <div>
+        <label class="block font-semibold">Book Name:</label>
+        <input type="text" name="name" required class="w-full p-2 border rounded" />
+      </div>
 
-  <form action="/books/new-book" method="POST" enctype="multipart/form-data">
-    <div>
-      <label>Book Name:</label>
-      <input type="text" name="name" required />
-    </div>
+      <div>
+        <label class="block font-semibold">Author:</label>
+        <input type="text" name="author" required class="w-full p-2 border rounded" />
+      </div>
 
-    <div>
-      <label>Author:</label>
-      <input type="text" name="author" required />
-    </div>
+      <div>
+        <label class="block font-semibold">Pages:</label>
+        <input type="number" name="pages" required class="w-full p-2 border rounded" />
+      </div>
 
-    <div>
-      <label>Pages:</label>
-      <input type="number" name="pages" required />
-    </div>
+      <div>
+        <label class="block font-semibold">Price:</label>
+        <input type="number" name="price" required class="w-full p-2 border rounded" />
+      </div>
 
-    <div>
-      <label>Price:</label>
-      <input type="number" name="price" required />
-    </div>
+      <div>
+        <label class="block font-semibold">Image:</label>
+        <input type="file" name="image" accept="image/*" required class="w-full p-2 border rounded" />
+      </div>
 
-    <div>
-      <input type="file" name="image" accept="image/*" required />
-    </div>
-
-    <div>
-      <button type="submit">Add Book</button>
-    </div>
-  </form>
+      <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Add Book</button>
+    </form>
+  </div>
 </body>
 </html>

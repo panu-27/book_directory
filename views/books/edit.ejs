@@ -4,28 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edit Book</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>Edit Book</h1>
-  <form action="/books/<%= book._id %>/update" method="POST" enctype="multipart/form-data">
-    <label>Book Name:</label>
-    <input type="text" name="name" value="<%= book.name %>" required />
+<body class="bg-gray-100 py-10">
+  <div class="max-w-xl mx-auto bg-white p-8 rounded shadow">
+    <h1 class="text-2xl font-bold mb-6">Edit Book</h1>
+    <form action="/books/<%= book._id %>/update" method="POST" enctype="multipart/form-data" class="space-y-4">
+      <div>
+        <label class="block font-semibold">Book Name:</label>
+        <input type="text" name="name" value="<%= book.name %>" required class="w-full p-2 border rounded" />
+      </div>
 
-    <label>Author:</label>
-    <input type="text" name="author" value="<%= book.author %>" required />
+      <div>
+        <label class="block font-semibold">Author:</label>
+        <input type="text" name="author" value="<%= book.author %>" required class="w-full p-2 border rounded" />
+      </div>
 
-    <label>Pages:</label>
-    <input type="number" name="pages" value="<%= book.pages %>" required />
+      <div>
+        <label class="block font-semibold">Pages:</label>
+        <input type="number" name="pages" value="<%= book.pages %>" required class="w-full p-2 border rounded" />
+      </div>
 
-    <label>Price:</label>
-    <input type="number" name="price" value="<%= book.price %>" required />
+      <div>
+        <label class="block font-semibold">Price:</label>
+        <input type="number" name="price" value="<%= book.price %>" required class="w-full p-2 border rounded" />
+      </div>
 
-    <label>Image:</label>
-    <input type="file" name="image" accept="image/*" />
+      <div>
+        <label class="block font-semibold">Image:</label>
+        <input type="file" name="image" accept="image/*" class="w-full p-2 border rounded" />
+        <img src="<%= book.imageUrl %>" alt="Current Image" class="mt-2 w-40 rounded" />
+      </div>
 
-    <img src="<%= book.imageUrl %>" alt="Current Image" width="200" />
-
-    <button type="submit">Update Book</button>
-  </form>
+      <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Update Book</button>
+    </form>
+  </div>
 </body>
 </html>
